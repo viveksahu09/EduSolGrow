@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useAuth } from '../context/AuthContext';
 
 interface Note {
   _id: string;
@@ -20,6 +21,7 @@ interface Note {
 }
 
 const NotesList: React.FC = () => {
+  const { isAuthenticated } = useAuth();
   const [notes, setNotes] = useState<Note[]>([]);
   const [filteredNotes, setFilteredNotes] = useState<Note[]>([]);
   const [loading, setLoading] = useState(true);
@@ -89,6 +91,15 @@ const NotesList: React.FC = () => {
   };
 
   const handleDownload = (files: { fileUrl: string; fileName: string }[]) => {
+    // Check if user is authenticated
+    if (!isAuthenticated) {
+      // Show alert and redirect to login
+      if (window.confirm('Please login to download notes. Click OK to go to the login page.')) {
+        window.location.href = '/login';
+      }
+      return;
+    }
+
     files.forEach((file, index) => {
       setTimeout(() => {
         const fileUrl = `http://localhost:5000${file.fileUrl}`;
@@ -229,10 +240,15 @@ const NotesList: React.FC = () => {
                 </div>
                 <div className="card-footer">
                   <button
-                    className="btn btn-primary w-100"
+                    className={`btn ${isAuthenticated ? 'btn-primary' : 'btn-outline-primary'} w-100`}
                     onClick={() => handleDownload(note.files)}
+                    title={isAuthenticated ? 'Download files' : 'Login required to download'}
                   >
-                    Download ({note.files.length} files)
+                    {isAuthenticated ? (
+                      <>Download ({note.files.length} files)</>
+                    ) : (
+                      <>Login to Download ({note.files.length} files)</>
+                    )}
                   </button>
                 </div>
               </div>

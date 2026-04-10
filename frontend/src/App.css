@@ -36,3 +36,83 @@
     transform: rotate(360deg);
   }
 }
+
+/* Footer styles */
+footer {
+  margin-top: auto;
+}
+
+/* Fix footer text visibility on dark background - higher specificity */
+footer h5 {
+  color: #fff !important;
+}
+
+footer p {
+  color: #adb5bd !important;
+}
+
+footer .text-muted {
+  color: #adb5bd !important;
+}
+
+footer .small.text-muted {
+  color: #adb5bd !important;
+}
+
+footer a.text-muted {
+  color: #adb5bd !important;
+}
+
+footer a.text-muted.text-decoration-none.small {
+  color: #adb5bd !important;
+}
+
+footer a {
+  color: #adb5bd !important;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+/* Ensure footer stays at bottom on short pages */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+/* Footer link styling - higher specificity */
+footer .list-unstyled li a {
+  transition: color 0.3s ease;
+  color: #adb5bd !important;
+}
+
+footer .list-unstyled li a.text-muted {
+  color: #adb5bd !important;
+}
+
+footer .list-unstyled li a.text-muted.text-decoration-none.small {
+  color: #adb5bd !important;
+}
+
+footer .list-unstyled li a:hover {
+  color: #0d6efd !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 0 1.5rem !important;
+  }
+  
+  footer h5 {
+    font-size: 1.1rem;
+  }
+}
