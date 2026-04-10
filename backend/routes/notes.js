@@ -34,7 +34,7 @@ const upload = multer({
 });
 
 // Upload note
-router.post('/upload', upload.array('files'), async (req, res) => {
+router.post('/upload', auth, upload.array('files'), async (req, res) => {
     try {
         if (!req.files || req.files.length === 0) {
             return res.status(400).json({ message: 'No files uploaded' });
@@ -211,7 +211,7 @@ router.patch('/:id/review', auth, async (req, res) => {
 });
 
 // Get user's uploaded notes
-router.get('/my-notes', async (req, res) => {
+router.get('/my-notes', auth, async (req, res) => {
     try {
         const notes = await Note.find({ uploadedBy: req.user._id })
             .sort({ createdAt: -1 });

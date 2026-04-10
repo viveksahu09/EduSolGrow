@@ -23,8 +23,17 @@ app.use('/api/auth', authRoutes);
 app.use('/api/notes', notesRoutes);
 app.use('/api/users', userRoutes);
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send({ error: 'Something went wrong!' });
+});
+
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/edusolgrow')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/edusolgrow', {
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 45000
+})
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('MongoDB connection error:', err));
 
