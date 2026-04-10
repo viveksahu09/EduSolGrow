@@ -1,0 +1,21 @@
+Mathematics Notes - Calculus I
+
+Chapter 1: Limits and Continuity
+- Definition of limit
+- Properties of limits
+- Continuity and discontinuity
+
+Chapter 2: Derivatives
+- Definition of derivative
+- Rules of differentiation
+- Applications of derivatives
+
+Chapter 3: Integration
+- Indefinite integrals
+- Definite integrals
+- Integration techniques
+
+Sample Problems:
+1. Find the limit of f(x) = (x^2 - 1)/(x - 1) as x approaches 1
+2. Differentiate f(x) = x^3 + 2x^2 - 5x + 3
+3. Integrate f(x) = 3x^2 + 2x - 1

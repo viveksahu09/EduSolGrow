@@ -1,0 +1,23 @@
+Chemistry Notes - Organic Chemistry
+
+Chapter 1: Hydrocarbons
+- Alkanes
+- Alkenes
+- Alkynes
+- Aromatic compounds
+
+Chapter 2: Functional Groups
+- Alcohols
+- Aldehydes
+- Ketones
+- Carboxylic acids
+
+Chapter 3: Reactions
+- Substitution reactions
+- Addition reactions
+- Elimination reactions
+
+Important Concepts:
+- IUPAC nomenclature
+- Isomerism
+- Reaction mechanisms

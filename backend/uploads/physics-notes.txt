@@ -1,0 +1,24 @@
+Physics Notes - Mechanics
+
+Chapter 1: Kinematics
+- Motion in one dimension
+- Motion in two dimensions
+- Projectile motion
+
+Chapter 2: Newton's Laws
+- First Law of Motion
+- Second Law of Motion
+- Third Law of Motion
+
+Chapter 3: Work and Energy
+- Work done by a force
+- Kinetic energy
+- Potential energy
+- Conservation of energy
+
+Important Formulas:
+- v = u + at
+- s = ut + (1/2)at^2
+- F = ma
+- KE = (1/2)mv^2
+- PE = mgh
